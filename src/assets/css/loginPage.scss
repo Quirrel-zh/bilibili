@@ -1,0 +1,371 @@
+@import "@/assets/css/variables";
+
+.login-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: $font-size-s;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1100;
+  @include flex(center, center);
+
+  .login {
+    @include flex(center, center);
+    flex-direction: row;
+    height: 430px;
+    width: 820px;
+    background-color: $pure-white;
+    background-image: url('/public/images/22_open.4ea5f239.png'), url('/public/images/33_open.f7d7f655.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 100%, 100% 100%;
+    background-size: 14%;
+    position: relative;
+    border-radius: 7px;
+    padding: 52px 65px 29px 92px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+    &.focus {
+      background-image: url('/public/images/22_close.9382a5a8.png'),
+      url('/public/images/33_close.a8c18fc8.png') !important;
+    }
+
+    .qr-code {
+      @include flex(center, center);
+      flex-direction: column;
+      position: relative;
+
+      .text-top {
+        margin-bottom: 26px;
+        line-height: 18px;
+        font-size: $font-size-title;
+        font-style: normal;
+        color: $text-gray;
+      }
+
+      .qr-img {
+        width: 173px;
+        height: 173px;
+        @include flex(center, center);
+        border: $text-gray 1px solid;
+        border-radius: 6px;
+      }
+
+      .text-btm {
+        margin-top: 26px;
+        font-weight: 400;
+        font-size: $font-size-xs;
+        line-height: 19px;
+        text-align: center;
+        color: $text-gray;
+
+        p {
+          a {
+            color: $hover-blue;
+          }
+        }
+      }
+    }
+
+    .line {
+      margin: 43px 44px 0 45px;
+      background-color: $line-border;
+      width: 1px;
+      height: 228px;
+      flex: none;
+      border-radius: 8px;
+      transform: scaleX(.5);
+    }
+
+    .user-info {
+      @include flex(center, flex-start);
+      flex-direction: column;
+      width: 400px;
+
+      .login-way {
+        @include flex(center, space-around);
+        flex-direction: row;
+        width: 200px;
+        margin-bottom: 26px;
+        color: $text-gray;
+
+        .title-way {
+          font-size: $font-size-title;
+          font-weight: 500;
+          cursor: pointer;
+
+          &.font-color {
+            color: $login-font-blue;
+            transition: .5s;
+          }
+        }
+
+        .way-line {
+          width: 1px;
+          height: 25px;
+          display: block;
+          background-color: $line-border;
+          transform: scaleX(.5);
+          flex: none;
+        }
+      }
+
+      .tab_form {
+        width: 400px;
+        height: 90px;
+        border: 1px solid $line-border;
+        border-radius: 8px;
+        line-height: 20px;
+        font-size: $font-size-s;
+        font-weight: 500;
+
+        input {
+          margin-left: 20px;
+          border: none;
+          outline: none;
+          font-size: $font-size-s;
+          font-weight: 400;
+          line-height: 20px;
+          flex: 1;
+        }
+
+        .mini-line {
+          display: block;
+          width: 100%;
+          height: 0;
+          border-bottom: 1px solid $line-border;
+        }
+
+        .username {
+          position: relative;
+          @include flex(center, flex-start);
+          box-sizing: border-box;
+          width: 100%;
+          height: 44px;
+          padding: 12px 20px;
+
+        }
+
+        .psw {
+          position: relative;
+          @include flex(center, flex-start);
+          box-sizing: border-box;
+          width: 100%;
+          height: 44px;
+          padding: 12px 20px;
+        }
+
+        .psw-forget {
+          cursor: pointer;
+          color: $hover-blue;
+          margin-left: 10px;
+        }
+
+        .code {
+          position: relative;
+          @include flex(center, flex-start);
+          box-sizing: border-box;
+          width: 100%;
+          height: 44px;
+          padding: 12px 20px;
+        }
+
+        .phone {
+          position: relative;
+          @include flex(center, flex-start);
+          box-sizing: border-box;
+          width: 100%;
+          height: 44px;
+          padding: 12px 20px;
+
+          .sns_line {
+            margin-right: 20px;
+            display: block;
+            width: 1px;
+            height: 20px;
+            background-color: $line-border;
+            transform: scaleX(.5);
+            flex: none;
+          }
+
+          .code-get {
+            cursor: pointer;
+            color: $line-border;
+
+            &.code-after {
+              cursor: pointer;
+              color: $hover-blue;
+            }
+          }
+        }
+      }
+
+      .login-pwd, .login-sns {
+        .btn-sub {
+          line-height: 40px;
+          font-size: $font-size-s;
+          font-weight: 400;
+          font-style: normal;
+          text-align: center;
+          width: 400px;
+          margin-top: 20px;
+
+          div {
+            width: 194px;
+            height: 40px;
+            box-sizing: border-box;
+            cursor: pointer;
+            border: 1px solid $line-border;
+            border-radius: 8px;
+            color: $text1;
+            background-color: $pure-white;
+          }
+
+          .btn-sign-in {
+            cursor: not-allowed;
+            background-color: $hover-blue;
+            color: $pure-white;
+            opacity: .5;
+
+            &.afterInput {
+              color: $pure-white;
+              background-color: $hover-blue;
+              cursor: pointer;
+              opacity: 1;
+
+              &:hover {
+                opacity: .85;
+              }
+            }
+          }
+
+          .btn-sign-phone {
+            @include flex(center, center);
+            text-align: center;
+            color: $pure-white;
+            background-color: $hover-blue;
+            cursor: pointer;
+
+            &:hover {
+              opacity: .85;
+            }
+          }
+        }
+      }
+
+      .login-pwd {
+        position: relative;
+
+        .btn-sub {
+          @include flex(center, space-between);
+
+        }
+
+      }
+
+      .login-sns {
+        position: relative;
+
+        .btn-sub {
+          @include flex(center, center);
+
+        }
+      }
+
+      .login-other {
+        margin-top: 24px;
+        @include flex(center, center);
+        flex-direction: column;
+
+        .other-top {
+          text-align: center;
+          color: $text3;
+          font-weight: 400;
+          font-size: $font-size-xs1;
+          line-height: 16px;
+        }
+
+        .other-way {
+          margin-top: 12px;
+          @include flex(center, center);
+
+          .way-title {
+            @include flex(center, center);
+            text-align: center;
+            font-size: $font-size-xs1;
+            color: $text3;
+            margin-right: 30px;
+            cursor: pointer;
+            transition: .3s;
+
+            &:hover {
+              color: $hover-blue;
+            }
+          }
+        }
+      }
+    }
+
+    .btm-title {
+      width: 351px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: $text3;
+      font-size: $font-size-xs1;
+      text-align: center;
+
+      a {
+        color: $hover-blue;
+      }
+    }
+
+    .login-alert {
+      display: none;
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 110px;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      font-size: 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: $pure-white;
+      border-radius: 5px;
+      z-index: 999;
+
+      &.alert-active {
+        display: block;
+        animation-duration: 1s;
+        animation-name: alert;
+        @keyframes alert {
+          0% {
+            opacity: 0;
+            bottom: 20%;
+          }
+
+          100% {
+            opacity: 1;
+            bottom: 50%;
+          }
+        }
+      }
+    }
+
+    .close-login {
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      background: url(https://s1.hdslb.com/bfs/seed/jinkela/short/mini-login-v2/img/close.a35a1809.svg) no-repeat;
+      background-size: 100% 100%;
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
+}

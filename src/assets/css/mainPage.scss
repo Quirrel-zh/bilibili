@@ -1,0 +1,311 @@
+@import "@/assets/css/variables";
+
+.header-bannar {
+  width: 100%;
+  position: relative;
+  top: -3px;
+
+  video {
+    width: 100%;
+    @media (max-width: 1250px) {
+      & {
+        width: 1250px; /* 设置视频宽度为1250px */
+        height: auto;
+      }
+    }
+  }
+
+  .logo {
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    cursor: pointer;
+  }
+}
+
+.header-channel {
+  max-width: calc(1980ox + 2 * var(--layout-padding));
+  margin: 0 auto;
+  height: 110px;
+  @include flex(center, center);
+  font-weight: 400;
+  padding: 0 var(--layout-padding);
+  @media (min-width: 1300px) and (max-width: 1399.9px) {
+    // 当窗口宽度在1300px到1399.9px之间时
+    & {
+      width: 1180px;
+    }
+  }
+  @media (max-width: 1139.9px) {
+    /* 当窗口宽度小于1139.9px时 */
+    & {
+      width: 1020px;
+    }
+  }
+  @media (max-width: 1150px) {
+    // 当窗口宽度小于1150px时
+    & {
+      width: 1150px;
+    }
+  }
+
+  .channel-icon {
+    @include flex(center, space-between);
+    margin-right: 8px;
+
+    .icon-item {
+      position: relative;
+      color: $text1;
+      @include flex(center, center);
+      flex-direction: column;
+      margin-right: 16px;
+      font-size: $font-size-s;
+      line-height: 20px;
+
+      .icon-bg {
+        @include flex(center, center);
+        background: #ff9212;
+        border-radius: 50%;
+        width: 46px;
+        height: 46px;
+        color: $line-border;
+        margin-bottom: 6px;
+        transition: .3s;
+
+        &:hover {
+          background-color: #f89d35;
+        }
+      }
+
+      &:nth-child(2) {
+        .icon-bg {
+          background-color: #f07775;
+
+          &:hover {
+            background-color: #f79d9b;
+          }
+        }
+      }
+    }
+  }
+}
+
+.channel-container {
+  width: 100%;
+  height: 72px;
+  @include flex(center, space-between);
+
+  .channel-left {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: column;
+    grid-gap: 10px;
+    padding-right: 30px;
+    width: 100%;
+    border-right: 1px solid $line-border;
+
+    .channel-link {
+      display: inline-block;
+      width: 100%;
+      border: 1px solid $line-border;
+      border-radius: 6px;
+      background-color: $deep-white;
+      text-align: center;
+      color: $text2;
+      letter-spacing: 2px;
+      line-height: 32px;
+      transition: .3s;
+
+      &:hover {
+        background-color: $line-border;
+        color: $text1;
+      }
+    }
+  }
+
+  .channel-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.7fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: column;
+    grid-gap: $font-size-m;
+    flex-shrink: 0;
+    padding-left: 20px;
+
+    .channel-link-right {
+      @include flex(center, flex-end);
+      width: 100%;
+      height: 100%;
+      color: $text2;
+      text-align: center;
+      letter-spacing: 2px;
+      font-weight: 400;
+      transition: .3s;
+
+      &:hover {
+        color: $hover-blue;
+      }
+    }
+  }
+}
+
+//
+.main-container {
+  max-width: calc(1980px + 2 * var(--layout-padding));
+  margin: 0 auto;
+  padding: 0 var(--layout-padding);
+  @media (max-width: 1139.9px) {
+    & {
+      width: 1020px;
+    }
+  }
+  @media (min-width: 1300px) and (max-width: 1399.9px) {
+    & {
+      width: 1180px;
+    }
+  }
+
+  .card-container2 {
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+
+    .left-card-container {
+      grid-column: span 2;
+      grid-row: span 2;
+      cursor: pointer;
+
+      .left-card {
+        //display: flex;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border-radius: 6px;
+        overflow: hidden;
+
+        img {
+          //display: flex;
+          width: 100%;
+          height: 100%;
+          flex: auto;
+          object-fit: cover;
+        }
+
+        .footer-text {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: 999;
+          width: 100%;
+          height: 80px;
+          flex: none;
+          padding: 10px 20px;
+
+          .title-mask {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 810px;
+            background: linear-gradient(0, rgb(98, 120, 116) 11%, rgba(0, 0, 0, 0) 20%);
+          }
+
+          .text-title {
+            position: relative;
+            height: 50px;
+            z-index: 999;
+            color: $pure-white;
+            font-size: $font-size-s;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    .feed-card {
+      width: 280px;
+      height: 232px;
+      grid-column: span 1;
+      grid-row: span 1;
+
+      .card-img {
+        position: relative;
+        width: 280px;
+        height: 158px;
+        border-radius: 7px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          cursor: pointer;
+        }
+      }
+
+      .card-text {
+        margin-top: 10px;
+        align-items: center;
+
+        h3 {
+          display: inline-block;
+          font-size: $font-size-s;
+          text-align: left;
+          height: 44px;
+          line-height: 22px;
+          color: $text1;
+          cursor: pointer;
+          transition: .3s;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
+          word-wrap: break-word !important;
+          line-break: anywhere;
+
+          &:hover {
+            color: $hover-blue;
+          }
+        }
+      }
+
+      .card-info {
+        margin-top: 4px;
+        margin-left: 4px;
+        @include flex(center, start);
+
+        .up-name {
+          cursor: pointer;
+          color: $text3;
+          font-size: $font-size-s;
+          transition: .3s;
+
+          &:hover {
+            color: $hover-blue;
+          }
+        }
+
+        .subscribe {
+          @include flex(center, center);
+          font-size: $font-size-xs;
+          border-radius: 4px;
+          background-color: $back-white;
+          color: $text-sub;
+          margin-right: 10px;
+          padding: 0 4px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+
+}

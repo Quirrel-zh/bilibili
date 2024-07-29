@@ -1,0 +1,154 @@
+@import "@/assets/css/variables";
+
+a {
+  color: inherit;
+}
+
+.header-bar {
+  width: 100%;
+  @include flex(center, space-between);
+  max-width: 2560px;
+  min-height: 64px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 24px;
+  height: 64px;
+  font-weight: 400;
+  transition: .3s;
+  color: $pure-white;
+  z-index: 1010;
+
+  &.scroll {
+    background-color: $pure-white;
+    color: $text1;
+  }
+
+  .left-entry {
+    @include flex(center, flex-start);
+    flex-shrink: 0;
+    margin-right: 30px;
+    height: 64px;
+    font-size: $font-size-s;
+    font-weight: 400;
+
+    .tiny-entry {
+      @include flex(center, center);
+      margin-right: $font-size-m;
+      //transition: .3s;
+    }
+  }
+
+  .search-input {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    background-color: $back-white-search;
+    padding: 0 48px 0 4px;
+    @include flex(center, flex-start);
+    position: relative;
+    border: 1px solid $line-border;
+    opacity: .9;
+    line-height: 40px;
+    max-width: 500px;
+
+    &:hover {
+      transition: .3s;
+      opacity: 1;
+    }
+
+    .search-content {
+      @include flex(center, space-between);
+      width: 100%;
+      padding: 0 8px;
+      height: 32px;
+      border-radius: 6px;
+
+      .icon-qingchu {
+        display: none;
+      }
+
+      input {
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        outline: none;
+      }
+    }
+
+    .search-btn {
+      @include flex(center, center);
+      position: absolute;
+      top: 3px;
+      right: 7px;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+
+      &:hover {
+        transition: .3s;
+        background-color: $line-border;
+      }
+    }
+  }
+
+  .right-entry {
+    @include flex(center, flex-start);
+    flex-shrink: 0;
+    margin-left: 10px;
+
+    .tiny-entry {
+      @include flex(center, center);
+      margin-left: $font-size-m;
+      //transition: .3s;
+      a {
+        @include flex(center, flex-start);
+        flex-direction: column;
+      }
+
+      .face {
+        @include flex(center, center);
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid $line-border;
+        transition: .3s;
+        color: $line-border;
+        background-color: $hover-blue;
+        position: relative;
+
+        &:hover {
+          transform: scale(1.5);
+        }
+
+        a {
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+
+      .update {
+        @include flex(center, center);
+        flex-direction: row;
+        width: 90px;
+        height: 34px;
+        color: $pure-white;
+        text-align: center;
+        background-color: #fb7299;
+        border-radius: 8px;
+
+        &:hover {
+          transition: .3s;
+          background-color: #ff7e9d;
+        }
+      }
+    }
+  }
+}

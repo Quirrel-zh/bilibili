@@ -1,0 +1,37 @@
+// 文字及背景颜色
+// white
+$pure-white: #fff;
+$deep-white: #f6f7f8;
+$line-border: #e3e5e7;
+$back-white: #fff0e3;
+$back-white-search: #f1f2f3;
+
+// blue
+$hover-blue: #00aeec;
+$login-font-blue: #0587b7;
+// black
+$text1: #18191c;
+$text2: #61666d;
+$text3: #9499a0;
+$text-gray: #505050;
+$text-sub: #ff7f24;
+
+// pink
+$pink-color: #ff6699;
+
+// 文字尺寸
+$font-size-xs: 12px;
+$font-size-xs1: 13px;
+$font-size-s: 14px;
+$font-size-m: 15px;
+$font-size-title: 18px;
+$font-size-video-title: 20px;
+$font-size-l: 24px;
+
+
+// 布局
+@mixin flex($items, $content) {
+  display: flex;
+  align-items: $items;
+  justify-content: $content;
+}
