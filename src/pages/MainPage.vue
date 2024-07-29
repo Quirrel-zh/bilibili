@@ -183,7 +183,7 @@
 						<div class="footer-text">
 							<div class="title-mask"></div>
 							<div class="text-title">
-								夏日美食解暑，带话题投稿瓜分万元贝壳金
+								夏日美食解暑，带话题投稿瓜分万元贝壳金~
 							</div>
 						</div>
 					</div>
